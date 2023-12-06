@@ -16,29 +16,30 @@ const generatePassword = () => {
     let staticPassword = "",
         randomPassword = "",
         excludeDuplicate = false,
-        passLegth = lengthSlider.value;
+        passLength = lengthSlider.value;
 
     options.forEach(option => {
         if (option.checked) {
-            if(option.id !== "exc-diplicate" && option.id !== "spaces") {
+            if (option.id !== "exc-duplicate" && option.id !== "spaces") {
                 staticPassword += characters[option.id];
-            } else if (option.id == "spaces") {
-                staticPassword += `  ${staticPassword}  `; 
+            } else if (option.id === "spaces") {
+                staticPassword += `  ${staticPassword}  `;
             } else {
                 excludeDuplicate = true;
             }
         }
     });
 
-    for (let i = 0; i < passLegth; i++) {
+    for (let i = 0; i < passLength; i++) {
         let randomChar = staticPassword[Math.floor(Math.random() * staticPassword.length)];
         if (excludeDuplicate) {
-            !randomPassword.includes(ramdomChar) || ramdomChar == " " ? randomPassword += randomChar : i--;
+            !randomPassword.includes(randomChar) || randomChar == " " ? randomPassword += randomChar : i--;
         } else {
-            randomPassword += randomChar
+            randomPassword += randomChar;
         }
     }
     passwordInput.value = randomPassword;
+
 }
 
 const updatePassIndicator = () => {
@@ -46,7 +47,7 @@ const updatePassIndicator = () => {
 }
 
 const updateSlider = () => {
-    document.querySelector(".pass-length span").innerHTML = lengthSlider.value;
+    document.querySelector(".pass-length span").innerText = lengthSlider.value;
     generatePassword();
     updatePassIndicator();
 }
@@ -54,10 +55,10 @@ updateSlider();
 
 const copyPassword = () => {
     navigator.clipboard.writeText(passwordInput.value);
-    copyIcon.innerHTML = "check";
+    copyIcon.innerText = "check";
     copyIcon.style.color = "#4285f4";
     setTimeout(() => {
-        copyIcon.innerHTML = "copy_all";
+        copyIcon.innerText = "copy_all";
         copyIcon.style.color = "#707070";
     }, 1500);
 }
