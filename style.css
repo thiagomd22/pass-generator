@@ -14,3 +14,25 @@ body{
     min-height: 100vh;
     background: #64B6AC;
 }
+
+.container{
+    width: 450px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.container h2{
+    font-weight: 600;
+    font-size: 1.31rem;
+    padding: 1rem 1.75rem;
+    border-bottom: 1px solid #d4dbe5;
+}
+
+.wrapper{
+    margin: 1.25rem 1.75rem;
+}
+
+.wrapper .input-box{
+    position: relative;
+}
