@@ -17,7 +17,7 @@ body{
 
 .container{
     width: 450px;
-    background: #fff;
+    background: #FCFFFD;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
@@ -144,11 +144,11 @@ body{
 
 .wrapper .generate-btn{
     width: 100%;
-    color: #fff;
+    color: #FCFFFD;
     border: none;
     outline: none;
     cursor: pointer;
-    background: #43A047;
+    background: #5D737E;
     font-size: 1.06rem;
     padding: 0.94rem 0;
     border-radius: 5px;
